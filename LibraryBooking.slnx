@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LibraryBooking.Api/LibraryBooking.Api.csproj" />
+    <Project Path="src/LibraryBooking.Domain/LibraryBooking.Domain.csproj" />
+    <Project Path="src/LibraryBooking.Infrastructure/LibraryBooking.Infrastructure.csproj" />
+  </Folder>
+</Solution>
