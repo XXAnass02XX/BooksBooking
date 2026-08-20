@@ -4,4 +4,7 @@
     <Project Path="src/LibraryBooking.Domain/LibraryBooking.Domain.csproj" />
     <Project Path="src/LibraryBooking.Infrastructure/LibraryBooking.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LibraryBooking.Infrastructure.Tests/LibraryBooking.Infrastructure.Tests.csproj" />
+  </Folder>
 </Solution>

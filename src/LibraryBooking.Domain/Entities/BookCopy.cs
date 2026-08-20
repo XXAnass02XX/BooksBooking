@@ -11,6 +11,17 @@ public class BookCopy : Entity
     public Library Library { get; private set; }
     public BookCopyStatus Status { get; private set; }
 
+    // Required by EF Core: constructor binding can only bind scalar values,
+    // never references to other entities, so the (Book, Library) constructor
+    // below is unusable for materializing rows read back from the database.
+    // EF calls this instead and fills every property itself via the private
+    // setters above.
+    private BookCopy()
+    {
+        Book = null!;
+        Library = null!;
+    }
+
     private BookCopy(Book book, Library library) : base()
     {
         Book = book;

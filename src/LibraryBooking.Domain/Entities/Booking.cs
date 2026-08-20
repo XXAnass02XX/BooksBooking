@@ -15,6 +15,17 @@ public class Booking : Entity
 
     private static readonly TimeSpan HoldDuration = TimeSpan.FromDays(2);
 
+    // Required by EF Core: constructor binding can only bind scalar values,
+    // never references to other entities, so the (Patron, BookCopy, DateTime)
+    // constructor below is unusable for materializing rows read back from
+    // the database. EF calls this instead and fills every property itself
+    // via the private setters above.
+    private Booking()
+    {
+        Patron = null!;
+        BookCopy = null!;
+    }
+
     private Booking(Patron patron, BookCopy bookCopy, DateTime reservedAtUtc) : base()
     {
         Patron = patron;
